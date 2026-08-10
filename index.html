@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Family reference for Findley Elementary School, Beaverton School District, 2026-27.">
+<title>Findley Elementary Family Hub — 2026-27</title>
+<style>
+  :root{
+    --purple:#5B3E96;
+    --purple-dark:#3d2a68;
+    --teal:#1F8A8C;
+    --teal-lt:#e6f4f4;
+    --ink:#1a1a1f;
+    --muted:#5f6470;
+    --line:#e2e4ea;
+    --bg:#f6f7fa;
+    --card:#ffffff;
+    --amber:#B26A00;
+    --amber-bg:#fdf4e3;
+    --red:#A8321F;
+    --red-bg:#fceeeb;
+    --green:#1F7A4D;
+    --green-bg:#e8f5ee;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px 80px}
+
+  /* ---------- review banner ---------- */
+  .review-note{
+    background:#2b2b33;color:#f3f3f5;font-size:13px;line-height:1.5;
+    padding:10px 20px;text-align:center;letter-spacing:.01em;
+  }
+  .review-note strong{color:#fff}
+
+  /* ---------- header ---------- */
+  header{
+    background:linear-gradient(135deg,var(--purple) 0%,var(--purple-dark) 55%,#1b1533 100%);
+    color:#fff;padding:34px 20px 30px;
+  }
+  header .inner{max-width:1080px;margin:0 auto}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#c9bce8;margin:0 0 6px}
+  h1{margin:0 0 8px;font-size:30px;line-height:1.15;letter-spacing:-.02em}
+  .sub{margin:0;color:#ddd6f2;font-size:15px}
+  .hdr-meta{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px}
+  .chip{
+    background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);
+    padding:5px 11px;border-radius:999px;font-size:12.5px;color:#f0ecfa;
+  }
+  .chip a{color:#fff}
+
+  /* ---------- countdown ---------- */
+  .countdown{
+    background:var(--teal);color:#fff;padding:12px 20px;text-align:center;font-size:14.5px;font-weight:600;
+  }
+  .countdown span{opacity:.85;font-weight:400}
+
+  /* ---------- tabs ---------- */
+  nav.tabs{
+    position:sticky;top:0;z-index:20;background:var(--card);
+    border-bottom:1px solid var(--line);box-shadow:0 1px 6px rgba(20,20,40,.05);
+  }
+  nav.tabs .inner{max-width:1080px;margin:0 auto;display:flex;gap:2px;overflow-x:auto;padding:0 12px}
+  nav.tabs button{
+    border:0;background:none;font:inherit;font-size:14px;font-weight:600;color:var(--muted);
+    padding:14px 13px;cursor:pointer;white-space:nowrap;border-bottom:3px solid transparent;
+  }
+  nav.tabs button:hover{color:var(--purple)}
+  nav.tabs button.on{color:var(--purple);border-bottom-color:var(--purple)}
+
+  /* ---------- panels ---------- */
+  .panel{display:none;padding-top:28px}
+  .panel.on{display:block}
+  h2{font-size:22px;margin:34px 0 6px;letter-spacing:-.01em}
+  h2:first-child{margin-top:4px}
+  h3{font-size:16.5px;margin:24px 0 8px}
+  .lede{color:var(--muted);margin:0 0 18px;font-size:15px;max-width:70ch}
+
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:20px 22px;margin:0 0 16px;
+  }
+  .card h3{margin-top:0}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:16px}
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+
+  /* ---------- flags ---------- */
+  .flag{
+    display:inline-block;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:2px 7px;border-radius:4px;vertical-align:middle;margin-left:6px;
+  }
+  .f-ok{background:var(--green-bg);color:var(--green)}
+  .f-verify{background:var(--amber-bg);color:var(--amber)}
+  .f-stale{background:var(--red-bg);color:var(--red)}
+
+  .callout{border-left:4px solid;padding:13px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-size:14.5px}
+  .c-warn{background:var(--amber-bg);border-color:var(--amber)}
+  .c-alert{background:var(--red-bg);border-color:var(--red)}
+  .c-info{background:var(--teal-lt);border-color:var(--teal)}
+
+  /* ---------- checklist ---------- */
+  .task{
+    display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);align-items:flex-start;
+  }
+  .task:last-child{border-bottom:0;padding-bottom:0}
+  .task input{margin-top:4px;width:17px;height:17px;accent-color:var(--purple);flex:none;cursor:pointer}
+  .task .body{flex:1;min-width:0}
+  .task .t{font-weight:650;font-size:15px}
+  .task .d{color:var(--muted);font-size:13.5px;margin-top:3px}
+  .task.done .t,.task.done .d{opacity:.42;text-decoration:line-through}
+  .prio{
+    font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:2px 6px;border-radius:4px;margin-right:7px;
+  }
+  .p-now{background:#fbe9e6;color:var(--red)}
+  .p-soon{background:var(--amber-bg);color:var(--amber)}
+  .p-later{background:#eceef4;color:var(--muted)}
+  .progress{font-size:13px;color:var(--muted);margin-bottom:4px}
+
+  /* ---------- tables ---------- */
+  table{width:100%;border-collapse:collapse;font-size:14px;margin:6px 0 4px}
+  th{
+    text-align:left;font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+    border-bottom:2px solid var(--line);padding:8px 10px 8px 0;font-weight:700;
+  }
+  td{padding:9px 10px 9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:0}
+  td.date{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:600;width:1%}
+  tr.noschool td{background:#faf6ff}
+  tr.key td{background:#fffaf0}
+
+  /* ---------- people ---------- */
+  .person{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+  .person:last-child{border-bottom:0}
+  .person .n{font-weight:650}
+  .person .r{color:var(--muted);font-size:13.5px;text-align:right}
+
+  a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(31,138,140,.3)}
+  a:hover{border-bottom-color:var(--teal)}
+  code{background:#eef0f5;padding:1px 5px;border-radius:4px;font-size:13px}
+  ul{margin:8px 0;padding-left:20px}
+  li{margin:5px 0}
+  .tight li{margin:2px 0}
+  .kv{font-size:14px;margin:5px 0}
+  .kv b{display:inline-block;min-width:132px;color:var(--muted);font-weight:600}
+  footer{color:var(--muted);font-size:13px;text-align:center;padding:34px 20px 10px;line-height:1.7}
+
+  @media print{
+    nav.tabs,.countdown{display:none}
+    .panel{display:block!important;page-break-before:always}
+    header{background:var(--purple)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+  @media (max-width:600px){
+    h1{font-size:24px}
+    .kv b{display:block;min-width:0}
+    .person{flex-direction:column;gap:2px}
+    .person .r{text-align:left}
+  }
+</style>
+</head>
+<body>
+
+
+<header>
+  <div class="inner">
+    <p class="eyebrow">Family Knowledge Base &middot; 2026-27</p>
+    <h1>Findley Elementary Dragons</h1>
+    <p class="sub">Everything a new family needs — one child entering Kindergarten, one entering 4th grade.</p>
+    <div class="hdr-meta">
+      <span class="chip">4155 NW Saltzman Rd, Portland OR 97229</span>
+      <span class="chip">Office <a href="tel:5033562100">(503) 356-2100</a></span>
+      <span class="chip">8:25 am – 3:00 pm</span>
+      <span class="chip">Beaverton SD &middot; feeds Tumwater MS → Sunset HS</span>
+    </div>
+  </div>
+</header>
+
+<div class="countdown">First day for grades 1–5: Tuesday, August 25, 2026 &nbsp;<span>· Kindergarten runs half days Aug 25–28, split by last name</span></div>
+
+<nav class="tabs">
+  <div class="inner" id="tabbar">
+    <button class="on" data-t="do">Do Now</button>
+    <button data-t="dates">Dates</button>
+    <button data-t="people">People</button>
+    <button data-t="kinder">Kindergarten</button>
+    <button data-t="fourth">4th Grade</button>
+    <button data-t="clubs">Clubs &amp; Activities</button>
+    <button data-t="volunteer">Volunteering</button>
+    <button data-t="money">Money</button>
+    <button data-t="ask">Questions to Ask</button>
+    <button data-t="links">Links</button>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- ============ DO NOW ============ -->
+<section class="panel on" id="do">
+  <h2>The list</h2>
+  <p class="lede">Ordered by urgency. School starts in 15 days. The first four items have real deadlines attached — everything else can wait until September.</p>
+
+  <div class="callout c-alert">
+    <strong>Two things that will bite you if you skip them.</strong> The volunteer background check takes up to <em>10 business days</em> and the district will not expedite it, even for a field trip. And submitting the online registration form does <em>not</em> finish enrollment — the school registrar has to review it and email you back.
+  </div>
+
+  <div class="card">
+    <p class="progress" id="prog">0 of 18 done</p>
+    <div id="tasks">
+
+      <div class="task"><input type="checkbox"><div class="body"><div class="t"><span class="prio p-now">This week</span>Go by the email, not the website, for Kindergarten's first day</div><div class="d"><b>The Kindergarten Orientation page is wrong.</b> It says A–L start full days Aug 27 and M–Z start Aug 28. The August emails and the school calendar confirm the actual arrangement: <b>half days across Aug 25–28, split by last name</b>. Use the email. Call the office at <a href="tel:5033562100">503-356-2100</a> if you need the exact day and time confirmed.</div></div></div>
+
+      <div class="task"><input type="checkbox"><div class="body"><div class="t"><span class="prio p-now">This week</span>Submit the Raptor volunteer background check — both parents, separate emails</div><div class="d">Up to 10 business days. Good for two years, not one. Required for classroom help, Art Literacy, field trips, Dragon Dash, everything. Do the <a href="https://www.beaverton.k12.or.us/departments/communications-community-involvement/volunteer/mandatory-volunteer-training" target="_blank" rel="noopener">mandatory training</a> first, then <a href="https://apps.raptortech.com/Apply/ODkwNTplbi1VUw==" target="_blank" rel="noopener">apply here</a>. Each volunteer needs their own unique email — a shared household address gets rejected. Confirmation lands in spam often.</div></div></div>
+
+      <div class="task"><input type="checkbox"><div class="body"><div class="t"><span class="prio p-now">This week</span>Buy school supplies</div><div class="d">Findley sells a full-year bundle for <b>$50 per student</b>. Online sales opened July 15; the office started taking exact cash or check on Aug 10. Or buy direct: <a href="https://a.co/0xM3ISd" target="_blank" rel="noopener">Kindergarten list</a> · <a href="https://a.co/bGYTQDP" target="_blank" rel="noopener">4th grade list</a>. <b>Headphones are not in the bundle</b> — buy separately, must be plug-in with no microphone.</div></div></div>
+
+      <div class="task"><input type="checkbox"><div class="body"><div class="t"><span class="prio p-now">This week</span>Confirm enrollment is actually finalized for both kids</div><div class="d">Online registration through <a href="https://www.beaverton.k12.or.us/departments/information-technology/enrolling-your-child/online-registration" target="_blank" rel="noopener">ParentVUE</a> is step one only. The registrar reviews and emails you follow-up paperwork — you are not enrolled until that closes. Need: proof of address, birth certificate or passport, immunization records.</div></div></div>
+
+      <div class="task"><input type="checkbox"><div class="body"><div class="t"><span class="prio p-now">This week</span>Complete Back-to-School Verification in ParentVUE</div><div class="d">Every family re-verifies contact info each August. <a href="https://www.beaverton.k12.or.us/departments/information-technology/parentvue-studentvue/backtoschool" target="_blank" rel="noopener">Verification page</a>. This also drives bus routing and emergency contacts, so get it right.</div></div></div>
+
+      <div class="task"><input type="checkbox"><div class="body"><div class="t"><span class="prio p-now">This week</span>Activate ParentSquare and set notification preferences</div><div class="d">This is the single most important thing on the list after the background check. Nearly every volunteer signup, class party, field trip, and weather alert runs through ParentSquare — not through the website, which is often months out of date. Accounts are auto-created from your ParentVUE contact info. <a href="https://www.beaverton.k12.or.us/departments/communications-community-involvement/parentsquare" target="_blank" rel="noopener">Setup</a> · <a href="https://apps.apple.com/us/app/beaverton-school-district/id1573825560" target="_blank" rel="noopener">iOS app</a> · <a href="https://play.google.com/store/apps/details?id=com.parentsquare.beaverton" target="_blank" rel="noopener">Android</a> — search the stores for "Beaverton School District" (iOS) or "Beaverton" (Android); both are published by ParentSquare, not the district</div></div></div>
+
+      <div class="task"><input type="checkbox"><div class="body"><div class="t"><span class="prio p-now">This week</span>Verify immunization records are on file</div><div class="d">Findley requires "at least 1 vaccine in each category before starting." Oregon Exclusion Day — when kids without complete records get sent home — is <b>Wednesday, February 24, 2027</b>. Fix gaps now, not in February.</div></div></div>
+
+      <div class="task"><input type="checkbox"><div class="body"><div class="t"><span class="prio p-soon">Before Aug 25</span>Check the bus assignment in ParentVUE</div><div class="d">Elementary students more than 1 mile from school get a bus. Assignments refresh Saturdays at 3:30 am and take effect Monday, so a blank field today may fill in closer to the start. Transportation: <a href="tel:5033564200">503-356-4200</a>. The district uses the "Here Comes the Bus" app.</div></div></div>
+
+      <div class="task"><input type="checkbox"><div class="body"><div class="t"><span class="prio p-soon">Before Aug 25</span>Sort out before/after care if you need it</div><div class="d"><b>Common Ground Extended Care</b> operates on-site at Findley. <a href="tel:5038606659">503-860-6659</a> · commongroundcare@outlook.com · <a href="https://www.commongroundcare.com/" target="_blank" rel="noopener">commongroundcare.com</a>. Their site says seats are available for some grades — call for both kids at once.</div></div></div>
+
+      <div class="task"><input type="checkbox"><div class="body"><div class="t"><span class="prio p-soon">Before Aug 25</span>Set up SchoolCafe and apply for meal benefits</div><div class="d"><a href="https://www.schoolcafe.com/beavertonsd" target="_blank" rel="noopener">schoolcafe.com/beavertonsd</a>. Apply for free/reduced <b>regardless of income</b> — Oregon's Expanded Income Guidelines reach up to 300% of the federal poverty level, well above the federal cutoff. Also ask whether Findley is a CEP school (all meals free) — I could not confirm this and it changes whether you need to load money at all.</div></div></div>
+
+      <div class="task"><input type="checkbox"><div class="body"><div class="t"><span class="prio p-soon">Before Aug 25</span>Buy recess-legal shoes</div><div class="d">Lace-up, rubber-soled. Explicitly banned: flip-flops, platforms, backless shoes, slick soles, and Heelys.</div></div></div>
+
+      <div class="task"><input type="checkbox"><div class="body"><div class="t"><span class="prio p-soon">Before Aug 25</span>Read the drop-off / pick-up rules before day one</div><div class="d">Saltzman driveway closes 8:10–8:30 am and 2:45–3:20 pm. Right turn only on exit, 8:15–8:45 am and 3:00–3:30 pm. Curb side only, pull all the way forward. <b>The campus is a cell-phone-free zone — hang up entering the lot.</b> <a href="https://findley.beaverton.k12.or.us/connect/drop-offpick-up" target="_blank" rel="noopener">Maps</a></div></div></div>
+
+      <div class="task"><input type="checkbox"><div class="body"><div class="t"><span class="prio p-soon">Before Aug 25</span>Bookmark the absence form and learn the 2 pm rule</div><div class="d"><a href="https://findley.beaverton.k12.or.us/connect/attendance/student-absence-form" target="_blank" rel="noopener">Absence form</a> — no phone call needed once submitted. <b>Going-home plan changes must be in by 2:00 pm</b> (<a href="https://findley.beaverton.k12.or.us/connect/attendance/going-home-plan-changes" target="_blank" rel="noopener">form</a>); notes go to classrooms at 2:00. Early pickup: be at school no later than 2:40 pm.</div></div></div>
+
+      <div class="task"><input type="checkbox"><div class="body"><div class="t"><span class="prio p-soon">September</span>Help your 4th grader form an OBOB team</div><div class="d">Oregon Battle of the Books, grades 3–5. Teams of 4–5 students, students recruit their own teammates, medieval-themed team name. <b>Registration opens September 2026</b>; battles late January 2027. Run by Rita Vennes (library). The book list lives on a district-login Google Site — ask her for it. Start reading in August.</div></div></div>
+
+      <div class="task"><input type="checkbox"><div class="body"><div class="t"><span class="prio p-soon">September</span>Introduce yourself to the PTO and get on the Facebook group</div><div class="d">Every Findley parent is automatically a PTO member — no dues. <a href="mailto:findleypto.president@gmail.com">findleypto.president@gmail.com</a> · <a href="https://www.facebook.com/groups/821142592943112/" target="_blank" rel="noopener">Facebook group</a>. Two board seats were vacant last year (VP, Event Coordinator) and they are actively recruiting. The <a href="https://sites.google.com/view/findleyvolunteerhub/home" target="_blank" rel="noopener">Volunteer Hub</a> is the real signup destination.</div></div></div>
+
+      <div class="task"><input type="checkbox"><div class="body"><div class="t"><span class="prio p-later">October</span>Track TAG screening results for your 4th grader</div><div class="d">Beaverton universally screens grades 3, 4, and 5. Fourth grade takes the <b>NGAT-Verbal</b>, targeted for completion within October. No action needed to be tested, but you can add a parent referral. <b>The district does not accept private testing.</b> <a href="mailto:tag@beaverton.k12.or.us">tag@beaverton.k12.or.us</a></div></div></div>
+
+      <div class="task"><input type="checkbox"><div class="body"><div class="t"><span class="prio p-later">Anytime</span>Decide on the 4th grade health curriculum opt-out</div><div class="d">Fourth grade health covers "Hormones and Body Changes" and "Hormones and Reproductive Organs" via <em>The Great Body Shop</em>. Oregon lets you opt out of sexuality-education components by emailing the teacher and principal naming the specific lessons. No deadline is published — raise it when the unit is announced. You cannot opt out of the whole health curriculum without documented religious or disability grounds.</div></div></div>
+
+      <div class="task"><input type="checkbox"><div class="body"><div class="t"><span class="prio p-later">Anytime</span>Put the ten non-student weekdays on your work calendar</div><div class="d">Sep 21, Oct 9, Oct 30, Jan 4, Jan 25, Jan 26, Feb 12, Apr 9, Apr 23 — plus a full week off at Thanksgiving and two weeks at winter break. See the Dates tab. These are the childcare landmines.</div></div></div>
+
+    </div>
+  </div>
+
+  <div class="callout c-info">
+    <strong>One phone call closes most of the remaining gaps.</strong> Call <a href="tel:5033562100">(503) 356-2100</a> and work through the Questions to Ask tab — conference dates, whether Findley is a free-meals school, current bell times, and the Kindergarten meet-and-greet slot are all unpublished or contradictory on the website.
+  </div>
+</section>
+
+<!-- ============ DATES ============ -->
+<section class="panel" id="dates">
+  <h2>Calendar</h2>
+  <p class="lede">District dates are confirmed from the official 2026-27 calendar PDF. Findley and PTO event dates in the second table are mostly last year's, because neither site has posted a 2026-27 calendar yet — use them to anticipate roughly when things land.</p>
+
+  <div class="card">
+    <h3>The anchors <span class="flag f-ok">Confirmed 2026-27</span></h3>
+    <table>
+      <tr><td class="date">Aug 25</td><td><b>First day of school, grades 1–5</b></td></tr>
+      <tr class="key"><td class="date">Aug 25–28</td><td><b>Kindergarten half days, split by last name</b> — per August emails and the school calendar. The website's staggered full-day version is wrong.</td></tr>
+      <tr class="key"><td class="date">Aug 31</td><td><b>All kindergarteners together, full days from here on</b></td></tr>
+      <tr class="key"><td class="date">Jun 10, 2027</td><td>Last day of school</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>No school <span class="flag f-ok">Confirmed 2026-27</span></h3>
+    <table>
+      <tr class="noschool"><td class="date">Sep 7</td><td>Labor Day</td></tr>
+      <tr class="noschool"><td class="date">Sep 21</td><td>Staff development day</td></tr>
+      <tr class="noschool"><td class="date">Oct 9</td><td>Staff development day</td></tr>
+      <tr class="noschool"><td class="date">Oct 30</td><td>Grading day (end of Q1)</td></tr>
+      <tr class="noschool"><td class="date">Nov 11</td><td>Veterans Day</td></tr>
+      <tr class="noschool"><td class="date">Nov 23–27</td><td><b>Thanksgiving / fall break — full week</b></td></tr>
+      <tr class="noschool"><td class="date">Dec 21 – Jan 1</td><td><b>Winter break</b> (return Tue Jan 5)</td></tr>
+      <tr class="noschool"><td class="date">Jan 4</td><td>Staff development day</td></tr>
+      <tr class="noschool"><td class="date">Jan 18</td><td>MLK Jr. Day</td></tr>
+      <tr class="noschool"><td class="date">Jan 25</td><td>Grading day (end of semester 1)</td></tr>
+      <tr class="noschool"><td class="date">Jan 26</td><td>Staff development day</td></tr>
+      <tr class="noschool"><td class="date">Feb 12</td><td>Staff development day</td></tr>
+      <tr class="noschool"><td class="date">Feb 15</td><td>Presidents Day</td></tr>
+      <tr class="noschool"><td class="date">Mar 22–26</td><td><b>Spring break</b></td></tr>
+      <tr class="noschool"><td class="date">Apr 9</td><td>Grading day (end of Q3)</td></tr>
+      <tr class="noschool"><td class="date">Apr 23</td><td>Staff development day</td></tr>
+      <tr class="noschool"><td class="date">May 31</td><td>Memorial Day</td></tr>
+      <tr class="noschool"><td class="date">Jun 11</td><td>Grading day</td></tr>
+    </table>
+    <p style="font-size:13.5px;color:var(--muted);margin-top:12px">Jun 14–18, 2027 are held as potential weather makeup days. Semester 1 ends Jan 22; students do attend that day.</p>
+  </div>
+
+  <div class="card">
+    <h3>Spirit assemblies <span class="flag f-ok">Confirmed 2026-27</span></h3>
+    <p style="font-size:14px;color:var(--muted);margin:0 0 10px">8:35–9:00 am. Parents welcome when their student has a role. Younger siblings cannot attend daytime events. All adults check in at the office.</p>
+    <table>
+      <tr><td class="date">Sep 25</td><td>Findley Gear</td></tr>
+      <tr><td class="date">Oct 29</td><td>Mis-Match Day</td></tr>
+      <tr><td class="date">Nov 20</td><td>Jersey Day</td></tr>
+      <tr><td class="date">Dec 18</td><td>Sing-a-Long <em>(RSVPs will be sent)</em></td></tr>
+      <tr><td class="date">Jan 29</td><td>Hat Day</td></tr>
+      <tr><td class="date">Feb 26</td><td>Findley Gear</td></tr>
+      <tr><td class="date">Mar 19</td><td>Book Character Day</td></tr>
+      <tr><td class="date">Apr 22</td><td>Rainbow Day</td></tr>
+      <tr><td class="date">May 28</td><td>Inside Out Day</td></tr>
+      <tr><td class="date">Jun 10</td><td>Beach Day</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>The annual rhythm <span class="flag f-verify">Last year's dates — expect similar timing</span></h3>
+    <p style="font-size:14px;color:var(--muted);margin:0 0 10px">Neither the school nor the PTO has posted a 2026-27 event calendar. These are 2025-26 actuals, useful for anticipating when to watch ParentSquare.</p>
+    <table>
+      <tr><th>When</th><th>What</th></tr>
+      <tr><td class="date">Mid-Sept</td><td>Findley Flyers running club starts (2025: Sep 16). K–5, no signup, your kid is already a member.</td></tr>
+      <tr><td class="date">Mid-Sept</td><td>Dragon Dash donation window opens (2025: Sep 15). <b>Note:</b> the PTO still points families at pledgestar.com/findley, which currently fails to load. Watch ParentSquare for the 2026 link.</td></tr>
+      <tr><td class="date">Mid-Oct</td><td>Passport Club checks begin (2025: Oct 15). Wednesdays, 2nd–5th grade.</td></tr>
+      <tr><td class="date">Early Oct</td><td><b>Dragon Dash</b> — the biggest fundraiser of the year (2025: Oct 8). Suggested $125/student.</td></tr>
+      <tr><td class="date">Oct</td><td>Chess Club sessions run Oct–Dec, Mon (beginner) and Wed (intermediate), 2:55–3:45 pm, Room 201.</td></tr>
+      <tr><td class="date">Late Oct</td><td><b>Fall Festival</b> (2025: Oct 30, 6–8 pm). Costumes, food trucks, pumpkins.</td></tr>
+      <tr><td class="date">Nov–Mar</td><td>Math Olympiad monthly contests, 4th–5th grade.</td></tr>
+      <tr><td class="date">Nov</td><td>First PTO general meeting (2025: Nov 12, 6–7 pm).</td></tr>
+      <tr><td class="date">Dec</td><td>Parent social (2025: Dec 12, 6–8 pm). Winter class parties.</td></tr>
+      <tr><td class="date">Late Jan</td><td>OBOB battles begin.</td></tr>
+      <tr><td class="date">Feb</td><td>Science Fair proposals due (2026: Feb 25). Valentine's class parties.</td></tr>
+      <tr><td class="date">Feb 24, 2027</td><td><b>Oregon Exclusion Day</b> — incomplete immunizations means your child is sent home. <span class="flag f-ok">Confirmed</span></td></tr>
+      <tr><td class="date">Mid-Mar</td><td><b>Science Fair</b>, K–5 (2026: Mar 12, cafeteria).</td></tr>
+      <tr><td class="date">Apr</td><td>Scholastic Book Fair (2025: Apr 23–30). Spring Showcase (2026: Apr 15).</td></tr>
+      <tr><td class="date">Late May</td><td><b>Carnival</b> (2025: May 30, 5–8 pm). Bounce houses, food trucks, silent auction. Dad-run.</td></tr>
+      <tr><td class="date">Early Jun</td><td>End-of-year class parties, Field Day, 5th grade celebration.</td></tr>
+    </table>
+  </div>
+
+  <div class="callout c-alert">
+    <strong>Not published anywhere:</strong> parent-teacher conference dates, Back-to-School / Curriculum Night, class list release, and picture day. The district calendar contains no conference days at all — Beaverton sets them building by building. They typically cluster near the grading days (Oct 30 and Apr 9). Ask the office.
+  </div>
+</section>
+
+<!-- ============ PEOPLE ============ -->
+<section class="panel" id="people">
+  <h2>People to know</h2>
+  <p class="lede">Findley stopped publishing staff email addresses for security reasons. Contact teachers through ParentVUE or ParentSquare, or call the office. The PTO uses shared role addresses rather than personal ones.</p>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Start with these five</h3>
+      <div class="person"><span class="n">Sherry Marsh, Ed.D.</span><span class="r">Principal</span></div>
+      <div class="person"><span class="n">Crystal Goldammer</span><span class="r">Office Assistant IV — front office</span></div>
+      <div class="person"><span class="n">Emily Gotfried</span><span class="r">Counselor · <a href="https://emilygotfried.weebly.com" target="_blank" rel="noopener">Counseling Corner</a> <i>(site still COVID-era)</i></span></div>
+      <div class="person"><span class="n">Rita Vennes</span><span class="r">Library Media Assistant — runs OBOB</span></div>
+      <div class="person"><span class="n">Hunter Rudd</span><span class="r">School Nurse</span></div>
+    </div>
+
+    <div class="card">
+      <h3>Phone numbers</h3>
+      <p class="kv"><b>Findley office</b><a href="tel:5033562100">(503) 356-2100</a></p>
+      <p class="kv"><b>Attendance</b>(503) 356-2100, option 1</p>
+      <p class="kv"><b>Findley fax</b>(503) 356-2105</p>
+      <p class="kv"><b>District office</b><a href="tel:5033564500">503-356-4500</a></p>
+      <p class="kv"><b>Transportation</b><a href="tel:5033564200">503-356-4200</a></p>
+      <p class="kv"><b>Nutrition Services</b><a href="tel:5033563955">503-356-3955</a></p>
+      <p class="kv"><b>Volunteer Services</b><a href="tel:5033564443">503-356-4443</a></p>
+      <p class="kv"><b>ParentVUE / IT</b><a href="tel:5033564416">503-356-4416</a></p>
+      <p class="kv"><b>Special Education</b><a href="tel:5033563900">503-356-3900</a></p>
+      <p class="kv"><b>Common Ground care</b><a href="tel:5038606659">503-860-6659</a></p>
+      <p class="kv" style="margin-top:10px;color:var(--muted);font-size:13px">Office hours 8:00 am – 4:30 pm.</p>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Kindergarten teachers</h3>
+      <p style="font-size:14px;color:var(--muted);margin:0 0 8px">One of these four. Assignment comes with the Meet &amp; Greet appointment.</p>
+      <div class="person"><span class="n">Jennifer Falkowski</span><span class="r"></span></div>
+      <div class="person"><span class="n">Traci Higdon</span><span class="r"></span></div>
+      <div class="person"><span class="n">Carissa Lemons</span><span class="r"></span></div>
+      <div class="person"><span class="n">Shauna Westra</span><span class="r"></span></div>
+    </div>
+    <div class="card">
+      <h3>4th grade teachers</h3>
+      <div class="person"><span class="n">Jordan Blincoe</span><span class="r"></span></div>
+      <div class="person"><span class="n">Laurie Calafet</span><span class="r"></span></div>
+      <div class="person"><span class="n">Melanie Driessen</span><span class="r"></span></div>
+      <div class="person"><span class="n">Andrea Varadi</span><span class="r"></span></div>
+      <p style="font-size:13px;color:var(--muted);margin-top:10px">Directory is undated and may still reflect 2025-26 assignments.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Specialists and support staff</h3>
+    <div class="grid3">
+      <div>
+        <div class="person"><span class="n">Amy Clay</span><span class="r">Instructional Coach</span></div>
+        <div class="person"><span class="n">Aylin Gann</span><span class="r">School Psychologist</span></div>
+        <div class="person"><span class="n">Sara Mesler</span><span class="r">Student Behavior TOSA</span></div>
+      </div>
+      <div>
+        <div class="person"><span class="n">Heather Arch</span><span class="r">SPED Resource Room</span></div>
+        <div class="person"><span class="n">Lindsay Eisenhart</span><span class="r">SPED Resource Room</span></div>
+        <div class="person"><span class="n">Kathleen Mccullough</span><span class="r">Health Assistant</span></div>
+      </div>
+      <div>
+        <div class="person"><span class="n">Brian Gorton</span><span class="r">PE</span></div>
+        <div class="person"><span class="n">Ryan Lindell</span><span class="r">PE</span></div>
+        <div class="person"><span class="n">Maria Mihaescu</span><span class="r">Music</span></div>
+      </div>
+      <div>
+        <div class="person"><span class="n">Lindsey Newby</span><span class="r">Music</span></div>
+        <div class="person"><span class="n">Shannon Bauck</span><span class="r">Language Acquisition</span></div>
+        <div class="person"><span class="n">Todd Hoodenpyle</span><span class="r">English Lang. Development</span></div>
+      </div>
+      <div>
+        <div class="person"><span class="n">Christopher Yule</span><span class="r">Office Assistant II</span></div>
+        <div class="person"><span class="n">Kody Heuser</span><span class="r">Technology Instructional Asst.</span></div>
+        <div class="person"><span class="n">Jayashree Bilakanti</span><span class="r">Technology Support</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>PTO board <span class="flag f-verify">2025-26 roster — no 2026-27 list posted</span></h3>
+    <div class="person"><span class="n">Dani Vennes</span><span class="r">President</span></div>
+    <div class="person"><span class="n">Catie Chiarchiaro</span><span class="r">Treasurer</span></div>
+    <div class="person"><span class="n">Tiana Richard</span><span class="r">Secretary &amp; Fundraising Co-Chair</span></div>
+    <div class="person"><span class="n">Katrina Stein</span><span class="r">Communication Specialist</span></div>
+    <div class="person"><span class="n">Adriana Leite</span><span class="r">Fundraising Co-Chair</span></div>
+    <div class="person"><span class="n">Amy Wang</span><span class="r">Yearbook Lead</span></div>
+    <div class="person"><span class="n">Nick Vennes</span><span class="r">Member At Large</span></div>
+    <div class="person"><span class="n">Lisa Steeves</span><span class="r">Member At Large</span></div>
+    <div class="person"><span class="n" style="color:var(--amber)">Vice President</span><span class="r">Vacant — actively recruiting</span></div>
+    <div class="person"><span class="n" style="color:var(--amber)">Event / Social Coordinator</span><span class="r">Vacant — actively recruiting</span></div>
+  </div>
+
+  <div class="card">
+    <h3>PTO email addresses</h3>
+    <p class="kv"><b>General / President</b><a href="mailto:findleypto.president@gmail.com">findleypto.president@gmail.com</a></p>
+    <p class="kv"><b>Volunteering</b><a href="mailto:findleypto.volunteer@gmail.com">findleypto.volunteer@gmail.com</a></p>
+    <p class="kv"><b>Dragon Dash</b><a href="mailto:dragondashpm@gmail.com">dragondashpm@gmail.com</a></p>
+    <p class="kv"><b>Chess Club</b><a href="mailto:findleychessclub@gmail.com">findleychessclub@gmail.com</a></p>
+    <p class="kv"><b>Math Olympiad</b><a href="mailto:findleymatholympiad@gmail.com">findleymatholympiad@gmail.com</a></p>
+    <p class="kv"><b>Carnival</b><a href="mailto:carnivaldads@gmail.com">carnivaldads@gmail.com</a></p>
+    <p class="kv"><b>Webmaster</b><a href="mailto:FindleyPTO.Webmaster@gmail.com">FindleyPTO.Webmaster@gmail.com</a></p>
+    <p class="kv"><b>District TAG</b><a href="mailto:tag@beaverton.k12.or.us">tag@beaverton.k12.or.us</a></p>
+    <p class="kv"><b>District volunteers</b><a href="mailto:volunteer@beaverton.k12.or.us">volunteer@beaverton.k12.or.us</a></p>
+  </div>
+</section>
+
+<!-- ============ KINDERGARTEN ============ -->
+<section class="panel" id="kinder">
+  <h2>Kindergarten</h2>
+  <p class="lede">The first-week schedule is the thing to get right, and the school website has it wrong. Details below.</p>
+
+  <div class="card">
+    <h3>The first week <span class="flag f-verify">Website is wrong — go by your email</span></h3>
+    <div class="callout c-alert" style="margin-top:0">
+      <b>Do not use the Kindergarten Orientation page for the first day.</b> It states a staggered <em>full-day</em> start — A&nbsp;–&nbsp;L on Aug 27, M&nbsp;–&nbsp;Z on Aug 28, everyone Aug 31. The August emails to families and the school calendar confirm something different: <b>half days across August 25&nbsp;–&nbsp;28, split by last name.</b> The email is correct. The website has not been updated.
+    </div>
+    <table>
+      <tr><td class="date">Tue Aug 25</td><td>Grades 1–5 first day. Kindergarten half-day sessions begin, by last name.</td></tr>
+      <tr><td class="date">Wed Aug 26</td><td>Kindergarten half days continue.</td></tr>
+      <tr><td class="date">Thu Aug 27</td><td>Kindergarten half days continue.</td></tr>
+      <tr><td class="date">Fri Aug 28</td><td>Kindergarten half days continue — last day of the split schedule.</td></tr>
+      <tr class="key"><td class="date">Mon Aug 31</td><td><b>All kindergarteners together, full days from here forward.</b></td></tr>
+    </table>
+    <div class="callout c-warn" style="margin-bottom:0">
+      <b>Still to fill in from your email:</b> which specific day and half-day session (morning or afternoon) applies to our last name, and the exact start and end times. The school calendar lists the block only as "Kindy 1st week schedule" with no detail attached, so the email is the only source for the specifics.
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>The basics</h3>
+      <p class="kv"><b>Hours</b>8:25 am – 3:00 pm once full days begin Aug 31</p>
+      <p class="kv"><b>Age rule</b>Must be 5 before September 1 (Oregon state requirement)</p>
+      <p class="kv"><b>Supply bundle</b>$50, or <a href="https://a.co/0xM3ISd" target="_blank" rel="noopener">buy the list yourself</a></p>
+      <p class="kv"><b>Headphones</b>Not included. Plug-in, no microphone.</p>
+      <p class="kv"><b>First full day</b>Monday, Aug 31</p>
+      <p class="kv"><b>Orientation</b>Was May 20 — already passed</p>
+      <p class="kv"><b>Teachers</b>Falkowski, Higdon, Lemons, Westra</p>
+    </div>
+    <div class="card">
+      <h3>What a kindergartener can join</h3>
+      <ul class="tight">
+        <li><b>Findley Flyers</b> — running/walking club, K–5, automatic membership, no cost. Tuesdays at recess (K window is 10:25–10:45 am) and Thursdays after school. Milestone prizes up to a full marathon.</li>
+        <li><b>Science Fair</b> — open to K–5, mid-March, proposal form due late February.</li>
+        <li><b>Art Literacy</b> — happens in the classroom; PTO-run, taught by parent volunteers.</li>
+        <li><b>Fall Festival, Carnival, Book Fair</b> — whole-school family events.</li>
+      </ul>
+      <p style="font-size:13.5px;color:var(--muted);margin-top:10px">Passport Club starts in 2nd grade. Math Olympiad and OBOB are upper grades. Chess Club has never published grade eligibility — ask.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>What kindergarten instruction looks like</h3>
+    <p style="margin-top:0">ELA uses <em>Houghton Mifflin Into Reading</em> (adopted May 2024) with explicit, systematic Structured Literacy in K–2 — decoding, fluency, spelling, grammar. Math learning targets for kindergarten center on counting to 100 and addition/subtraction concepts, using <em>Contexts for Learning Mathematics</em> and Dreambox. There is no mandated math homework at the district level.</p>
+    <p style="margin-bottom:0">The math department's advice to parents: play strategy games like Yahtzee, Blokus and Set for number sense rather than drilling speed, and let your child work Dreambox <b>independently</b> so the adaptive engine calibrates correctly.</p>
+  </div>
+</section>
+
+<!-- ============ 4TH GRADE ============ -->
+<section class="panel" id="fourth">
+  <h2>4th grade</h2>
+  <p class="lede">Fourth grade is the year TAG screening happens, OBOB opens up, and the Dragon Riders application lands in spring. Three things worth tracking.</p>
+
+  <div class="card">
+    <h3>TAG screening — happens automatically in October <span class="flag f-ok">District process confirmed</span></h3>
+    <p style="margin-top:0">Beaverton runs <b>universal screening in grades 3, 4, and 5</b>. Fourth grade takes the <b>NGAT-Verbal</b>, and testing is targeted for completion within October. You do not have to nominate your child to be tested.</p>
+    <ul class="tight">
+      <li>Identification also weighs <b>teacher observation</b> (Kingore Inventory), classroom performance, and <b>parent input</b>. You can submit a <a href="https://docs.google.com/forms/d/e/1FAIpQLSePbvKBPqLm4mJ-JYO9z_-mcFsyBJQqZrxIJdDvJWUdXRb0FQ/viewform" target="_blank" rel="noopener">parent referral form</a> — it will not by itself trigger testing, but anecdotal evidence gets flagged to the building.</li>
+      <li><b>Beaverton does not accept private testing.</b> If you have outside psychoeducational testing from elsewhere, it will not be used for identification.</li>
+      <li>Once identified, TAG status is <b>permanent</b>. Students can be retested every two years.</li>
+      <li>Identified students are <b>not</b> pulled into separate classes — the teacher builds an individualized plan with the family.</li>
+      <li><b>SUMMA</b>, the district magnet program, is admission-by-test-score. Parents are notified in the fall by letter from the district office if their student is eligible to apply. No action needed to be considered.</li>
+      <li>Contact <a href="mailto:tag@beaverton.k12.or.us">tag@beaverton.k12.or.us</a>. Findley's own TAG page names facilitators who no longer appear in the staff directory — ask the office who currently holds the role.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Oregon Battle of the Books — act in September</h3>
+    <p style="margin-top:0">Open to grades 3–5. This is the most parent-involvement-dependent thing on the fourth grade list, because <b>students recruit their own teams</b>.</p>
+    <ul class="tight">
+      <li>Teams of <b>4–5 players</b>, with a medieval-themed name to match the Dragons mascot.</li>
+      <li><b>Registration opens September 2026.</b> Battles begin late January 2027, starting within grade level, then elimination rounds across grades. School champions advance to Regionals — a Findley 5th grade team made the Sweet Sixteen recently.</li>
+      <li>Run by <b>Rita Vennes</b> (library). The book list and signup form live on a Google Site that requires a district login, so ask her directly or watch ParentSquare.</li>
+      <li>Practical move: help your son or daughter line up teammates and start reading in August, before registration opens.</li>
+    </ul>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Dragon Riders — spring application</h3>
+      <p style="margin-top:0">An enrichment program with per-trimester applications. Students apply for the first trimester <b>in the spring of 4th grade</b>, so this lands around February–April 2027 for your child.</p>
+      <ul class="tight">
+        <li>30 students accepted per trimester</li>
+        <li>Demand exceeds seats, so a <b>lottery</b> decides the final 30</li>
+        <li>Students must be in good standing in all classes</li>
+      </ul>
+      <p style="font-size:13.5px;color:var(--muted);margin-bottom:0">No application link, coordinator, or exact date is published. Ask about it at spring conferences.</p>
+    </div>
+    <div class="card">
+      <h3>Math Olympiad</h3>
+      <p style="margin-top:0">Monthly contests <b>November through March</b>, 4th and 5th grade only. Five nonroutine problems, 30-minute limit, individual work, no calculators. Team capacity is around 35 students.</p>
+      <p style="font-size:13.5px;color:var(--muted);margin-bottom:0">The PTO page dates to 2021 and lists no cost, registration window, or signup link. Email <a href="mailto:findleymatholympiad@gmail.com">findleymatholympiad@gmail.com</a> in September.</p>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Passport Club — Levels 1 through 4</h3>
+      <p style="margin-top:0">A volunteer-run geography program for grades 2–5. Students study monthly maps and get tested identifying world locations, earning a globe stamp in their passport plus a postage stamp "visa" per level. <b>Fourth graders work Levels 1–4.</b></p>
+      <p style="margin-bottom:0">Checks are Wednesday mornings, roughly monthly October through May, with a second-chance day in late May. Testing happens in the technology room. Parents volunteer as "checkers" 8:30–10:30 am one Wednesday a month.</p>
+    </div>
+    <div class="card">
+      <h3>Health curriculum — read this one</h3>
+      <p style="margin-top:0">The 4th grade scope and sequence of <em>The Great Body Shop</em> includes <b>"Hormones and Body Changes"</b> and <b>"Hormones and Reproductive Organs."</b> This is the puberty content.</p>
+      <p style="margin-bottom:0">Oregon lets you opt out of sexuality-education components by <b>emailing the teacher and the principal, specifying which lessons</b>. No deadline is published. You cannot opt out of the entire health curriculum without written religious or disability-related documentation. Erin's Law abuse-prevention material from fightchildabuse.org is also part of the curriculum, with preview and opt-out available.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Everything else about 4th grade</h3>
+    <ul class="tight">
+      <li><b>IXL</b> — the Academics page says 4th graders are expected to do 45 minutes of IXL computer time per week. Note that the Math page describes Dreambox instead; the two pages disagree, so ask the teacher which platform is actually in use.</li>
+      <li><b>Science Fair</b> — open to all grades. Proposal form comes home in February, returned to the front office or library. Projects delivered the day before the fair.</li>
+      <li><b>Chess Club</b> — Mondays for beginners, Wednesdays for intermediate, 2:55–3:45 pm in Room 201, capped at 30 per session, running roughly October to December. Grade eligibility and cost have never been published.</li>
+      <li><b>Spring Showcase</b> and the <b>Carnival</b> are the big spring events.</li>
+      <li>Note that the <b>5th grade celebration</b> fundraising machine (Valentine grams, movie night concessions, car wash) is a whole parallel operation that kicks in next year, not this one.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CLUBS ============ -->
+<section class="panel" id="clubs">
+  <h2>Clubs, activities and events</h2>
+  <p class="lede">Nearly everything here is PTO-run and staffed by parent volunteers. Signups run through ParentSquare, not the PTO website — which is why activating ParentSquare matters more than bookmarking anything.</p>
+
+  <div class="callout c-warn">
+    <strong>Caveat on all of this.</strong> The PTO site has not been updated for 2026-27 — the only page carrying a 2026-27 label is the reimbursement form, and the blog has been silent since February 2026. Costs, dates, and signup windows below come from prior years. Treat them as "roughly when to expect it," not as fact.
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Findley Flyers <span class="flag f-ok">K–5 · free · no signup</span></h3>
+      <p style="margin-top:0">Running and walking club. Your student is automatically a member. Tuesdays at recess in grade-specific windows (K at 10:25–10:45 am up to 5th at 12:30–12:50 pm) and Thursdays after school. Milestone prizes from 1 mile up to a marathon: stickers, certificates, tokens, assembly recognition.</p>
+      <p style="margin-bottom:0"><b>Volunteers needed weekly</b> — grade level leads (~20 min/week) and 2–3 lap counters per recess. This is the easiest way to be present at school regularly.</p>
+    </div>
+    <div class="card">
+      <h3>Passport Club <span class="flag f-ok">Grades 2–5</span></h3>
+      <p style="margin-top:0">Volunteer-run geography enrichment. Monthly Wednesday morning checks, October through May, plus a second chance day. Levels scale by grade: 2nd does Levels 1–2, 3rd does 1–3, 4th does 1–4, 5th does special North America itineraries.</p>
+      <p style="margin-bottom:0">Practice quizzes live on <a href="https://www.purposegames.com/profile/332718/games" target="_blank" rel="noopener">PurposeGames</a> and <a href="https://quizlet.com/PassportClub" target="_blank" rel="noopener">Quizlet</a>. The maps themselves are password-protected on the PTO site.</p>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Art Literacy <span class="flag f-verify">Volunteers needed</span></h3>
+      <p style="margin-top:0">PTO-managed, taught entirely by parent volunteers. Around six lessons a year: a visual presentation on an artist plus a hands-on project. Two roles — Lead Volunteer (one per classroom, schedules and reserves supplies) and Support Volunteer.</p>
+      <p style="margin-bottom:0"><b>No art background required, all materials provided.</b> Background check clearance is a hard gate. <a href="https://sites.google.com/site/artlitfindley/sign-up-to-volunteer" target="_blank" rel="noopener">Signup</a>. The page labelled "Calendar" on that site is actually the <a href="https://sites.google.com/site/artlitfindley/calendar" target="_blank" rel="noopener">Art Cart booking sheet</a> for teachers, not a lesson schedule.</p>
+    </div>
+    <div class="card">
+      <h3>Chess Club <span class="flag f-stale">Page last updated 2024</span></h3>
+      <p style="margin-top:0">Two tracks: Mondays for beginner/low, Wednesdays for intermediate/high. 2:55–3:45 pm in Meeting Room 201, 30 students per session, roughly seven sessions running October to December.</p>
+      <p style="margin-bottom:0"><b>Grades, cost, and registration process have never been published.</b> Email <a href="mailto:findleychessclub@gmail.com">findleychessclub@gmail.com</a> in early fall.</p>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Science Fair <span class="flag f-ok">K–5</span></h3>
+      <p style="margin-top:0">All Findley students eligible. The 2025-26 cycle ran: proposals due Feb 25, projects delivered Mar 11, fair Mar 12 in the cafeteria. Proposal forms come home on paper and go back to the front office or library.</p>
+      <p style="margin-bottom:0"><a href="https://drive.google.com/file/d/1e6X5faSouOpUs6njqRg8oyfqrNWFs56i/view" target="_blank" rel="noopener">2026 Registration Form</a> · <a href="https://drive.google.com/file/d/1wK1geVCG5AcalOS3_z3iMSe2KfY5FPxG/view" target="_blank" rel="noopener">Science Fair Guide 2026</a> — both are last year's files and require a Google sign-in to open. Parent roles: Science Fair Council (review proposals from home, 10–15 min each), set-up crew, tear-down crew.</p>
+    </div>
+    <div class="card">
+      <h3>Yearbook</h3>
+      <p style="margin-top:0"><b>$20</b>, pre-order at <a href="https://buytheyearbook.com" target="_blank" rel="noopener">buytheyearbook.com</a> with <b>school code 731662</b>. Pre-ordering is the only guaranteed way to get one — office stock after delivery is limited.</p>
+      <p style="margin-bottom:0">Volunteers needed for photography, layout and distribution: <a href="https://forms.gle/J6MZjiQ9ThvVgfJ47" target="_blank" rel="noopener">signup form</a> (requires a Google sign-in).</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>The big family events</h3>
+    <table>
+      <tr><th>Event</th><th>When</th><th>What it is</th></tr>
+      <tr><td><b>Dragon Dash</b></td><td class="date">Early Oct</td><td>Pledge-based fun run and the year's biggest fundraiser. Funds Art Literacy, Passport Club, Science Fair, field trip buses, author visits, Fall Festival and Carnival.</td></tr>
+      <tr><td><b>Fall Festival</b></td><td class="date">Late Oct</td><td>Evening event, 6–8 pm. Karaoke, DJ, costume contest, free pumpkins, food trucks, 50/50 raffle benefiting the 5th grade celebration.</td></tr>
+      <tr><td><b>Parent socials</b></td><td class="date">Dec &amp; Apr</td><td>Evening social in December, morning pastry social in April. Good entry point for meeting other parents.</td></tr>
+      <tr><td><b>International Extravaganza</b></td><td class="date">Feb–Apr</td><td>Cultural dances, international treats and traditions presented by Findley families. Ran in 2025, not mentioned since.</td></tr>
+      <tr><td><b>Book Fair</b></td><td class="date">April</td><td>Scholastic, roughly a week. <a href="https://www.scholastic.com/bf/findleyelementaryschool" target="_blank" rel="noopener">Findley's Scholastic page</a>.</td></tr>
+      <tr><td><b>Spring Showcase</b></td><td class="date">April</td><td>Announced for Apr 15, 2026 with no other detail published. Unclear what it involves.</td></tr>
+      <tr><td><b>Carnival</b></td><td class="date">Late May</td><td>The big one. 5–8 pm, games, prizes, bounce houses, food trucks, raffle, silent auction, themed (2025 was Minecraft). Dad-managed — <a href="mailto:carnivaldads@gmail.com">carnivaldads@gmail.com</a>.</td></tr>
+      <tr><td><b>Field Day</b></td><td class="date">Early June</td><td>Plus end-of-year class parties.</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Scouting — not run by the PTO</h3>
+    <p style="margin-top:0"><b>Cub Scouts:</b> Pack 718 — <a href="https://pack718.com/" target="_blank" rel="noopener">pack718.com</a>, which names Findley as its meeting location. The PTO site links to pack718.<b>net</b>, which returns a server error.</p>
+    <p style="margin-bottom:0"><b>Girl Scouts:</b> join through <a href="https://www.girlscoutsosw.org" target="_blank" rel="noopener">girlscoutsosw.org</a>. Local recruiter for the Stoller area is Denise Greenspan, <a href="mailto:membership.stoller.girlscouts@gmail.com">membership.stoller.girlscouts@gmail.com</a>.</p>
+  </div>
+</section>
+
+<!-- ============ VOLUNTEER ============ -->
+<section class="panel" id="volunteer">
+  <h2>Volunteering</h2>
+  <p class="lede">One gate controls everything: the Raptor background check. Nothing else can happen until it clears.</p>
+
+  <div class="card">
+    <h3>The background check, step by step</h3>
+    <ol>
+      <li><b>Complete the mandatory volunteer training first</b> — <a href="https://www.beaverton.k12.or.us/departments/communications-community-involvement/volunteer/mandatory-volunteer-training" target="_blank" rel="noopener">training page</a>. Do this before applying, not after.</li>
+      <li><b>Apply through Raptor</b> and authorize an Oregon criminal records check — <a href="https://apps.raptortech.com/Apply/ODkwNTplbi1VUw==" target="_blank" rel="noopener">English application</a> · <a href="https://apps.raptortech.com/Apply/ODkwNTplcy1VUw==" target="_blank" rel="noopener">Spanish</a>.</li>
+      <li><b>Once approved</b>, watch ParentSquare for signups and contact the activity or committee lead directly.</li>
+    </ol>
+    <ul class="tight" style="margin-top:14px">
+      <li><b>Takes up to 10 business days.</b> The district will not expedite, even for an imminent field trip.</li>
+      <li><b>Valid two years</b>, not one. You get an email reminder about 30 days before expiry.</li>
+      <li><b>Each volunteer needs a unique personal email.</b> Shared household or couple addresses get rejected.</li>
+      <li>Confirmation emails come from raptortech.com and land in spam frequently.</li>
+      <li>Every visit, bring <b>government-issued photo ID showing your date of birth</b>. Staff scan it, run a sex-offender registry check, and print a badge.</li>
+      <li>Immigration status does not affect eligibility and an SSN is not required.</li>
+      <li>Field trips and chaperoning count as volunteering under district policy IICC, so full clearance is required — a same-week signup will not work.</li>
+      <li>Questions: <a href="mailto:volunteer@beaverton.k12.or.us">volunteer@beaverton.k12.or.us</a> · <a href="tel:5033564443">503-356-4443</a>. Denials or appeals: Public Safety, <a href="tel:5033564444">503-356-4444</a>.</li>
+    </ul>
+    <div class="callout c-warn" style="margin-bottom:0">If either of you was ever approved as a Beaverton volunteer before fall 2024, that approval was wiped when the district moved to Raptor. Everyone reapplied.</div>
+  </div>
+
+  <div class="card">
+    <h3>Where to actually sign up</h3>
+    <p style="margin-top:0">The <a href="https://sites.google.com/view/findleyvolunteerhub/home" target="_blank" rel="noopener">Findley Volunteer Hub</a> is the real destination — a Google Site, not the PTO website. Contact <a href="mailto:findleypto.volunteer@gmail.com">findleypto.volunteer@gmail.com</a>.</p>
+    <table>
+      <tr><th>Role</th><th>Commitment</th></tr>
+      <tr><td><b>Grade Leader</b></td><td>Liaison between teachers and families for a grade; coordinates three class parties a year (Winter, Valentine's, Year-End). Seeking 1–2 per grade. Sign up via the general <a href="https://forms.gle/QcoXXhzd15rD37nf6" target="_blank" rel="noopener">Findley Volunteer Sign-up form</a> — there is no Grade-Leader-specific form.</td></tr>
+      <tr><td><b>Findley Flyers lap counter</b></td><td>Tuesdays at lunch or Thursdays after school. Grade leads ~20 min/week.</td></tr>
+      <tr><td><b>Art Literacy lead</b></td><td>One per classroom — schedules lessons, reserves supplies. Support volunteers also needed.</td></tr>
+      <tr><td><b>Passport Club checker</b></td><td>One Wednesday morning a month, 8:30–10:30 am. Also at-home postage stamp cutting.</td></tr>
+      <tr><td><b>Library support</b></td><td>Daily, starting 8:30 or 8:40 am, about an hour.</td></tr>
+      <tr><td><b>Yearbook staff</b></td><td>Photography, layout, distribution. <a href="https://forms.gle/J6MZjiQ9ThvVgfJ47" target="_blank" rel="noopener">Form</a></td></tr>
+      <tr><td><b>Science Fair Council</b></td><td>Review proposals from home in February, 10–15 minutes each.</td></tr>
+      <tr><td><b>PTO Vice President</b></td><td>Vacant. Lead project manager, stands in for the President, expected to step up to President after 1–2 years. The linked form is a general <a href="https://docs.google.com/forms/d/e/1FAIpQLSewtdI9UuwZxYsWSbeon6wYdjf2pJG8cFUNFJnIVdqKPfZwuQ/viewform" target="_blank" rel="noopener">board &amp; activities interest form</a> still headed 2025-26, not a VP-specific application.</td></tr>
+      <tr><td><b>Volunteer Coordinator</b></td><td>Vacant.</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>PTO meetings</h3>
+    <p style="margin-top:0">Every Findley parent is automatically a PTO member. <b>No dues, no signup.</b> Last year's schedule ran evening general meetings at 6:00–7:00 pm in November, February, March and May, plus a December evening social and an April morning pastry social. <b>No 2026-27 schedule has been posted.</b> Email <a href="mailto:findleypto.president@gmail.com">findleypto.president@gmail.com</a> and ask.</p>
+    <p style="margin-bottom:0;font-size:13.5px;color:var(--muted)">Meeting minutes on the PTO site stop at February 2024. Bylaws (revised Jan 2024) are <a href="https://www.findleypto.com/wp-content/uploads/2024/05/By-Laws-Edits-012124-Google-Docs.pdf" target="_blank" rel="noopener">here</a>.</p>
+  </div>
+</section>
+
+<!-- ============ MONEY ============ -->
+<section class="panel" id="money">
+  <h2>Money</h2>
+  <p class="lede">What you will be asked to pay, and the two ways to get money back into the school without writing another check.</p>
+
+  <div class="card">
+    <h3>What you will actually spend</h3>
+    <table>
+      <tr><th>Item</th><th>Cost</th><th>When</th></tr>
+      <tr><td>School supply bundle (optional — you can buy the list yourself)</td><td class="date">$50/student</td><td>Now</td></tr>
+      <tr><td>Headphones (not in the bundle)</td><td class="date">varies</td><td>Now</td></tr>
+      <tr><td>School meals</td><td class="date">unconfirmed</td><td>Ongoing — <a href="https://www.schoolcafe.com/beavertonsd" target="_blank" rel="noopener">SchoolCafe</a></td></tr>
+      <tr><td>Dragon Dash suggested donation</td><td class="date">$125/student</td><td>Sept–Oct</td></tr>
+      <tr><td>Yearbook</td><td class="date">$20</td><td>Spring — code 731662</td></tr>
+      <tr><td>Findley spirit gear</td><td class="date">varies</td><td><a href="https://www.jettbranding.com/findley/" target="_blank" rel="noopener">jettbranding.com/findley</a></td></tr>
+      <tr><td>Chess Club, Math Olympiad</td><td class="date">unpublished</td><td>Fall</td></tr>
+      <tr><td>PTO membership</td><td class="date">$0</td><td>Automatic</td></tr>
+    </table>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Meals — one open question</h3>
+      <p style="margin-top:0">Beaverton uses <b>SchoolCafe</b>, not MySchoolBucks. Oregon has no universal free meals program, but the state's <b>Expanded Income Guidelines</b> extend free meals well above the federal cutoff — up to 300% of the federal poverty level — and any Oregon school that charges for meals must participate. <b>Apply regardless of what you earn.</b></p>
+      <p style="margin-bottom:0">Some Beaverton schools operate under the federal Community Eligibility Provision, where every student eats free. <b>I could not confirm whether Findley is one of them</b> — worth one call to Nutrition Services at <a href="tel:5033563955">503-356-3955</a>. Ignore Findley's own meals page entirely; it still describes COVID-era curbside pickup.</p>
+    </div>
+    <div class="card">
+      <h3>Dragon Dash — the main fundraiser</h3>
+      <p style="margin-top:0">A pledge-based run, roughly early October, with a donation window opening mid-September. Suggested goal $125 per student, tax receipts for donations of $25 and up. <b>The registration link the PTO publishes (pledgestar.com/findley) does not currently load</b> — checked Aug 10, 2026. The 2026 campaign link should come through ParentSquare.</p>
+      <p style="margin-bottom:0">Class-level prizes: the first class to 100% participation gets a short movie and extra recess. <b>Merely registering counts toward class prizes</b> — worth doing even if you donate nothing. Volunteering on event day requires background check clearance, and younger siblings cannot attend.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Free money — employer matching</h3>
+    <p style="margin-top:0">The PTO maintains a list of employers that match donations. Given the Portland tech and healthcare corridor this is worth checking against your employer.</p>
+    <p style="font-size:14px">Listed matching employers: Boeing, Columbia, DA Davidson, Energizer, First Tech FCU, Genentech, GlaxoSmithKline, IBM, Intel, John L. Scott, Laika, Microsoft, Nike, Novellus, Oracle, PGE, Regence/Cambia, Salesforce, Schneider Electric, Synopsys, The Standard, Thomson Reuters, US Bank, Wells Fargo.</p>
+    <ul class="tight">
+      <li><b>Nike, Cambia, Providence and Kaiser employees must donate directly through their employer portal</b>, not through PledgeStar.</li>
+      <li>Email the receipt to <a href="mailto:dragondashpm@gmail.com">dragondashpm@gmail.com</a> with your student's name and teacher.</li>
+      <li><b>Matched funds do not count toward student prize levels</b> because the receipts arrive too late.</li>
+      <li>Intel matches 100% but the request must be submitted <b>within the same calendar quarter</b>, and PayPal receipts and check copies are not accepted.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Passive fundraising</h3>
+    <p style="margin-top:0"><b>Fred Meyer Community Rewards</b> — link your rewards card at <a href="https://www.fredmeyer.com/communityrewards" target="_blank" rel="noopener">fredmeyer.com/communityrewards</a>, search non-profit number <b>90831</b>. You keep your own points, fuel points and rebates. Two minutes, then it runs forever.</p>
+    <p style="margin-bottom:0"><b>Skip these:</b> the PTO site still advertises AmazonSmile, which Amazon shut down, and Box Tops, which links to a 2016 PDF and appears abandoned.</p>
+  </div>
+
+  <div class="card">
+    <h3>Getting reimbursed</h3>
+    <p style="margin:0">If you front money for a PTO activity, the <a href="https://docs.google.com/forms/d/e/1FAIpQLSeRzLcoyJRpSuFEfZP9Bm0J9sjoBQyVvkQDgMPXVBMZV7LQSA/viewform" target="_blank" rel="noopener">Reimbursement Form 2026-27</a> is the one page on the PTO site that has actually been updated for this school year. It is access-restricted, so you will need to be signed in to a permitted Google account. No process description, deadline, or dollar limit is published — ask the treasurer before spending anything substantial.</p>
+  </div>
+</section>
+
+<!-- ============ ASK ============ -->
+<section class="panel" id="ask">
+  <h2>Questions to ask</h2>
+  <p class="lede">These are the real gaps. Neither website answers them, and several have contradictory answers posted. One call to the office at <a href="tel:5033562100">(503) 356-2100</a> clears most of the first group.</p>
+
+  <div class="card">
+    <h3>Call the front office</h3>
+    <ol>
+      <li>Confirm our kindergartener's <b>exact half-day session</b> during Aug 25–28: which day, morning or afternoon, and what times. <i>(The Orientation page contradicts the email — the office should know the page is wrong.)</i></li>
+      <li>When are <b>fall and spring parent-teacher conferences</b>? They are not on the district calendar at all.</li>
+      <li>Is there a <b>Back-to-School Night or Curriculum Night</b>, and when?</li>
+      <li>When do <b>class lists</b> come out, and how are we notified?</li>
+      <li>When is <b>picture day</b>?</li>
+      <li>Are there any <b>early release days</b> at Findley? The district calendar has none but the handbook has a section for them.</li>
+      <li>Confirm <b>bell times are still 8:25–3:00</b> — the district shifted schedules recently and Findley's own page is an unreadable image.</li>
+      <li>What time do <b>doors open</b> in the morning, and when is breakfast served?</li>
+      <li>Is Findley a <b>CEP school</b> — do all students eat free? If not, what do breakfast and lunch cost this year?</li>
+      <li>Who is the current <b>TAG facilitator</b>? The website names four different people, none of whom appear in the staff directory.</li>
+      <li>Is there any <b>instrumental music</b> program at the elementary level, or does band start in middle school?</li>
+      <li>Is there a current <b>student handbook</b>? The posted one was last updated August 2023.</li>
+    </ol>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Ask the PTO</h3>
+      <p style="font-size:14px;color:var(--muted);margin-top:0">Email <a href="mailto:findleypto.president@gmail.com">findleypto.president@gmail.com</a></p>
+      <ol class="tight">
+        <li>What is the <b>2026-27 meeting schedule</b>?</li>
+        <li>Who is on the <b>2026-27 board</b>, and are the VP and Event Coordinator seats still open?</li>
+        <li>Is there a <b>2026-27 event calendar</b> anywhere, or is the Google Calendar the live source?</li>
+        <li>What does <b>Chess Club</b> cost, which grades, and when does registration open?</li>
+        <li>Same for <b>Math Olympiad</b>.</li>
+        <li>Are <b>Grade Leader</b> slots open for kindergarten and 4th grade?</li>
+      </ol>
+    </div>
+    <div class="card">
+      <h3>Ask Rita Vennes (library)</h3>
+      <ol class="tight">
+        <li>Where is the <b>OBOB book list</b> for grades 3–5 this year? The Google Site requires a district login.</li>
+        <li>When exactly does <b>team registration</b> open, and how do we submit a team?</li>
+        <li>Is there a minimum reading requirement before registering?</li>
+      </ol>
+      <h3 style="margin-top:20px">Ask at fall conferences</h3>
+      <ol class="tight">
+        <li>Is my 4th grader using <b>IXL or Dreambox</b>? The website says both.</li>
+        <li>When will the <b>TAG screening results</b> be shared?</li>
+        <li>When does the <b>health unit on puberty</b> run, so we can decide on the opt-out?</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LINKS ============ -->
+<section class="panel" id="links">
+  <h2>Links</h2>
+  <div class="card">
+    <h3>Link check <span class="flag f-ok">All 46 links tested Aug 10, 2026</span></h3>
+    <p style="margin-top:0;font-size:14px">Every link on this page was fetched and checked, not just copied over. Results:</p>
+    <ul class="tight" style="font-size:14px">
+      <li><b>2 were dead</b> and are now fixed or annotated: the PTO's Dragon Dash registration link (pledgestar.com/findley, redirect loop) and its Cub Scouts link (pack718.net, server error — the working site is pack718.com).</li>
+      <li><b>3 were live but mislabeled</b> and are now described accurately: the PTO "VP application" is a general 2025-26 board interest form, the "Grade Leader" form is the all-school volunteer form, and Art Literacy's "Calendar" is a teacher booking sheet for the Art Cart.</li>
+      <li><b>4 need a Google sign-in</b>: both Science Fair files, the yearbook volunteer form, and the PTO reimbursement form.</li>
+      <li><b>9 could not be machine-checked</b> because the sites block automated access: Amazon supply lists, SchoolCafé, the Facebook group, Quizlet, Scholastic, Fred Meyer, the library catalog, and Sora. These are normal bot protections rather than evidence of a problem, but I have not personally confirmed them.</li>
+      <li>The rest loaded and matched. Several district pages render their body text via JavaScript, so I confirmed page identity but not the instructions on them.</li>
+    </ul>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Use these weekly</h3>
+      <ul class="tight">
+        <li><a href="https://www.beaverton.k12.or.us/departments/communications-community-involvement/parentsquare" target="_blank" rel="noopener">ParentSquare</a> — where everything actually happens</li>
+        <li><a href="https://www.beaverton.k12.or.us/departments/information-technology/parentvue-studentvue" target="_blank" rel="noopener">ParentVUE</a> — grades, contacts, bus assignment, teacher messaging</li>
+        <li><a href="https://findley.beaverton.k12.or.us/connect/attendance/student-absence-form" target="_blank" rel="noopener">Report an absence</a></li>
+        <li><a href="https://findley.beaverton.k12.or.us/connect/attendance/going-home-plan-changes" target="_blank" rel="noopener">Going-home plan change</a> — by 2:00 pm</li>
+        <li><a href="https://www.schoolcafe.com/beavertonsd" target="_blank" rel="noopener">SchoolCafe</a> — meal accounts</li>
+        <li><a href="https://findley.beaverton.k12.or.us/about-us/newsletter" target="_blank" rel="noopener">Dragon News newsletter</a> <span class="flag f-verify">The August link may point to last year's issue</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Reference</h3>
+      <ul class="tight">
+        <li><a href="https://findley.beaverton.k12.or.us/" target="_blank" rel="noopener">Findley Elementary</a></li>
+        <li><a href="https://www.findleypto.com/" target="_blank" rel="noopener">Findley PTO</a></li>
+        <li><a href="https://sites.google.com/view/findleyvolunteerhub/home" target="_blank" rel="noopener">Volunteer Hub</a></li>
+        <li><a href="https://www.facebook.com/groups/821142592943112/" target="_blank" rel="noopener">PTO Facebook group</a></li>
+        <li><a href="https://resources.finalsite.net/images/v1767812199/beavertonk12orus/beavertonk12orus/vzawrifkcgnfity5yjk9/SchoolDistrictCalendar2026-2027-English.pdf" target="_blank" rel="noopener">2026-27 district calendar PDF</a></li>
+        <li><a href="https://findley.beaverton.k12.or.us/connect/staff-directory" target="_blank" rel="noopener">Staff directory</a></li>
+        <li><a href="https://findley.beaverton.k12.or.us/connect/drop-offpick-up" target="_blank" rel="noopener">Drop-off / pick-up maps</a></li>
+        <li><a href="https://library4.cascadetech.org/common/welcome.jsp?site=115&amp;context=beaverton" target="_blank" rel="noopener">Library catalog</a> · <a href="https://soraapp.com/library/beavertonor" target="_blank" rel="noopener">Sora ebooks</a></li>
+        <li><a href="https://www.beaverton.k12.or.us/contact-us/department-phone-directory" target="_blank" rel="noopener">District phone directory</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Pages to ignore <span class="flag f-stale">Confirmed out of date</span></h3>
+    <p style="margin-top:0;font-size:14px">These are live on the school and PTO sites and will actively mislead you:</p>
+    <ul class="tight" style="font-size:14px">
+      <li><b>Findley Meals page</b> — still describes COVID-era curbside pickup</li>
+      <li><b>Student handbook</b> — last updated August 24, 2023</li>
+      <li><b>School Improvement Plan</b> — goals dated June 2024</li>
+      <li><b>Parent Partnership letters</b> — from 2020-21</li>
+      <li><b>Science page</b> — says K-8 curriculum adoption is "pending" since 2019</li>
+      <li><b>Learning Targets</b> — published October 2022</li>
+      <li><b>PTO Fall Festival page</b> — still advertises October 24, 2024</li>
+      <li><b>PTO Chess Club page</b> — fall 2024 session dates</li>
+      <li><b>PTO Math Olympiad page</b> — last touched 2021</li>
+      <li><b>PTO Battle of the Books page</b> — last touched 2019</li>
+      <li><b>PTO AmazonSmile page</b> — the program no longer exists</li>
+      <li><b>PTO Box Tops link</b> — a 2016 PDF</li>
+      <li><b>PTO meeting minutes</b> — nothing since February 2024</li>
+      <li><b>PTO blog</b> — silent since February 17, 2026</li>
+      <li><b>Kindergarten Orientation page</b> — publishes a staggered full-day start that contradicts the August emails and the school calendar. Do not use it for the first day.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Documents in this repository</h3>
+    <ul class="tight">
+      <li><a href="docs/website-update-list.pdf">Findley Websites — Content Requiring Update</a> (PDF) — the items found across both sites, sorted into what is incorrect, what is broken, and what is out of date. Every page path in it is clickable.</li>
+      <li><a href="docs/reference.md">Reference facts sheet</a> — dates, contacts, phone numbers and program notes in plain text, easy to search and to diff when something changes.</li>
+      <li><a href="docs/VERIFIED.md">What was verified, and when</a> — which facts were confirmed against a source on August 10, 2026, which are inferred, and which are still open questions.</li>
+      <li><a href="docs/website-update-list.html">Worklist source</a> — the HTML the PDF is generated from, so it can be updated and re-exported.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Weather closures</h3>
+    <p style="margin:0">Decisions are posted <b>by 5:30 am</b> to the district website, Facebook, X, local media, School Messenger and ParentSquare. A two-hour delay means buses run snow routes; Findley is not on the no-service list. The district explicitly tells families to assess conditions at their own address and decide independently. There is no remote learning day policy.</p>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  Compiled by Claude, August 10, 2026, from findley.beaverton.k12.or.us, findleypto.com and beaverton.k12.or.us.<br>
+  Green flags are confirmed 2026-27. Amber means verify. Red means the source is known to be stale.<br>
+  Checkboxes reset when the page reloads.
+</footer>
+
+<script>
+  var bar = document.getElementById('tabbar');
+  bar.addEventListener('click', function(e){
+    var b = e.target.closest('button');
+    if(!b) return;
+    [].forEach.call(bar.querySelectorAll('button'), function(x){ x.classList.toggle('on', x===b); });
+    [].forEach.call(document.querySelectorAll('.panel'), function(p){ p.classList.toggle('on', p.id===b.dataset.t); });
+    window.scrollTo({top:0,behavior:'instant'});
+  });
+
+  var boxes = [].slice.call(document.querySelectorAll('#tasks input[type=checkbox]'));
+  var prog = document.getElementById('prog');
+  function refresh(){
+    var n = boxes.filter(function(b){ return b.checked; }).length;
+    prog.textContent = n + ' of ' + boxes.length + ' done';
+  }
+  boxes.forEach(function(b){
+    b.addEventListener('change', function(){
+      b.closest('.task').classList.toggle('done', b.checked);
+      refresh();
+    });
+  });
+  refresh();
+</script>
+</body>
+</html>
