@@ -123,6 +123,7 @@
   .p-soon{background:var(--amber-bg);color:var(--amber)}
   .p-later{background:#eceef4;color:var(--muted)}
   .progress{font-size:13px;color:var(--muted);margin-bottom:4px}
+  #reset{background:none;border:0;padding:0 0 0 10px;font:inherit;color:var(--muted);text-decoration:underline;cursor:pointer}
 
   /* ---------- tables ---------- */
   table{width:100%;border-collapse:collapse;font-size:14px;margin:6px 0 4px}
@@ -211,7 +212,7 @@
   </div>
 
   <div class="card">
-    <p class="progress" id="prog">0 of 18 done</p>
+    <p class="progress"><span id="prog">0 of 18 done</span><button type="button" id="reset" hidden>Clear all</button></p>
     <div id="tasks">
 
       <div class="task"><input type="checkbox"><div class="body"><div class="t"><span class="prio p-now">This week</span>Go by the email, not the website, for Kindergarten's first day</div><div class="d"><b>The Kindergarten Orientation page is wrong.</b> It says A–L start full days Aug 27 and M–Z start Aug 28. The August emails and the school calendar confirm the actual arrangement: <b>half days across Aug 25–28, split by last name</b>. Use the email. Call the office at <a href="tel:5033562100">503-356-2100</a> if you need the exact day and time confirmed.</div></div></div>
@@ -892,7 +893,7 @@
 <footer>
   Compiled by Claude, August 10, 2026, from findley.beaverton.k12.or.us, findleypto.com and beaverton.k12.or.us.<br>
   Green flags are confirmed 2026-27. Amber means verify. Red means the source is known to be stale.<br>
-  Checkboxes reset when the page reloads.
+  Checked items are remembered in this browser on this device. "Clear all" resets them.
 </footer>
 
 <script>
@@ -907,15 +908,48 @@
 
   var boxes = [].slice.call(document.querySelectorAll('#tasks input[type=checkbox]'));
   var prog = document.getElementById('prog');
+  var reset = document.getElementById('reset');
+  var KEY = 'findley.tasks.v1';
+
+  // Keyed by task wording, not position, so saved ticks survive tasks being
+  // added, removed or reordered. Reword a task and it returns unchecked.
+  function idOf(box){
+    var t = box.closest('.task').querySelector('.t').cloneNode(true);
+    var prio = t.querySelector('.prio');
+    if(prio) prio.parentNode.removeChild(prio);
+    return t.textContent.replace(/\s+/g,' ').trim();
+  }
+  function load(){
+    try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ return {}; }
+  }
+  function save(){
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){}
+  }
+
+  var state = load();
   function refresh(){
     var n = boxes.filter(function(b){ return b.checked; }).length;
     prog.textContent = n + ' of ' + boxes.length + ' done';
+    reset.hidden = n === 0;
   }
   boxes.forEach(function(b){
+    if(state[idOf(b)]) b.checked = true;
+    b.closest('.task').classList.toggle('done', b.checked);
     b.addEventListener('change', function(){
       b.closest('.task').classList.toggle('done', b.checked);
+      if(b.checked) state[idOf(b)] = true; else delete state[idOf(b)];
+      save();
       refresh();
     });
+  });
+  reset.addEventListener('click', function(){
+    state = {};
+    save();
+    boxes.forEach(function(b){
+      b.checked = false;
+      b.closest('.task').classList.remove('done');
+    });
+    refresh();
   });
   refresh();
 </script>
