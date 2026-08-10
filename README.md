@@ -2,7 +2,9 @@
 
 Family knowledge base for **Findley Elementary School** (Beaverton School District, Portland OR), school year 2026-27.
 
-**Live page:** https://reubenbroadfoot.github.io/findley/
+**Live page:** https://reubenbroadfoot.github.io/findley-0c4984c218/
+
+The repository name is deliberately unguessable, and the HTML pages carry `noindex` so they stay out of search results. The repo is still public, though — treat the URL as unlisted, not private.
 
 ## What's here
 
